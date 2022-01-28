@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- xml_loc.xml -->
+
+<root>
+    <bartenterid>
+        <i353601027720871946>
+            <bar_name>Chez Zobi</bar_name>
+            <money>0</money>
+            <customers>0</customers>
+            <rating>0</rating>
+            <ingredients>
+                <owned_alcohol></owned_alcohol>
+                <owned_grocery></owned_grocery>
+            </ingredients>
+        </i353601027720871946>
+    </bartenterid>
+</root>

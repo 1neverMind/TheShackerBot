@@ -18,13 +18,16 @@ for (const file of events) {
     client.on(eventName, event.bind(null, client));
 }
 
-const commands = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
-for (const file of commands) {
-    const commandName = file.split(".")[0];
-    const command = require(`./commands/${file}`);
+const load_dir = fs.readdirSync("./commands");
+for (const name_dir of load_dir) {
+    const commands = fs.readdirSync(`./commands/${name_dir}`).filter(file => file.endsWith(".js"));
+    for (const file of commands) {
+        const commandName = name_dir+" "+file.split(".")[0];
+        const command = require(`./commands/${name_dir}/${file}`);
 
-    console.log(`Attempting to load command ${commandName}`);
-    client.commands.set(commandName, command);
+        console.log(`Attempting to load command ${commandName}`);
+        client.commands.set(commandName, command);
+    }
 }
 
 client.once('ready', () => {
